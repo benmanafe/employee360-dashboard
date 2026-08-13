@@ -1,0 +1,79 @@
+:root {
+  --page-bg: #0b1120;
+  --scroll-track: transparent;
+  --scroll-thumb: #334155;
+  --scroll-thumb-hover: #475569;
+}
+
+[data-theme="light"] {
+  --page-bg: #f1f5f9;
+  --scroll-track: transparent;
+  --scroll-thumb: #cbd5e1;
+  --scroll-thumb-hover: #94a3b8;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  background: var(--page-bg);
+  transition: background-color 0.4s ease;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--page-bg);
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+  /* Remove white gap on some browsers */
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--page-bg);
+  transition: background-color 0.4s ease;
+}
+
+@keyframes theme-wipe {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ── Modern subtle scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
