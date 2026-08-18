@@ -30,7 +30,7 @@ export default function ThemeProvider({ children }) {
   const toggle = () => {
     setWipeColor(themes[themeName].pageBg);
     window.clearTimeout(timerRef.current);
-    timerRef.current = window.setTimeout(() => setWipeColor(null), 500);
+    timerRef.current = window.setTimeout(() => setWipeColor(null), 0);
     setThemeName((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
